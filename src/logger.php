@@ -14,7 +14,7 @@ class Logger implements LoggerInterface
     {
         $db = new SQLite3('syslog.sqlite3');
         $sql =<<<EOF
-          CREATE TABLE logs
+          CREATE TABLE IF NOT EXISTS logs
           (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
               level VARCHAR(10) NOT NULL,
@@ -80,8 +80,8 @@ class Logger implements LoggerInterface
 
         $ret = $db->exec($sql);
         if (!$ret) {
-            printf("%d...%s....%s\n", $id, $sql, $db->lastErrorMsg());
-        // echo $db->lastErrorMsg();
+            // printf("%d...%s....%s\n", $id, $sql, $db->lastErrorMsg());
+            echo $db->lastErrorMsg();
         } else {
             echo "Records created successfully";
         }
