@@ -8,9 +8,9 @@
             "email": "yuhang.chang@104.com.tw"
         }
     ],
-    "minimum-stability": "dev-master",
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.0.0",
+        "psr/log": "^1.1"
     },
     "autoload": {
         "psr-4": {
