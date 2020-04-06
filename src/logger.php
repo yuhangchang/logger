@@ -71,7 +71,9 @@ class Logger implements LoggerInterface
         $ret = $db->query($sql);
         while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
             $id++;
-            echo "id=".$row['id'];
+            echo "id=".$row['id']."\n";
+            echo "level=".$row['level']."\n";
+            echo "message=".$row['message']."\n";
         }
         $sql =<<<EOF
               INSERT INTO logs (id,level,message)
