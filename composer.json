@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Php\\Exam\\Logger\\": "src/logger"
+            "Php\\Exam\\": "src/"
         }
     }
 }

@@ -1,11 +1,16 @@
 <?php
 
-namespace logger;
+namespace Php\Exam\Logger;
 
-class logger
+class Logger
 {
     public function __construct()
     {
         // code...
+    }
+
+    public function hello()
+    {
+        echo 'hello';
     }
 }
