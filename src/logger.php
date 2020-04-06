@@ -72,8 +72,6 @@ class Logger implements LoggerInterface
         while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
             $id++;
             echo "id=".$row['id']."\n";
-            echo "level=".$row['level']."\n";
-            echo "message=".$row['message']."\n";
         }
         $sql =<<<EOF
               INSERT INTO logs (id,level,message)
@@ -85,7 +83,7 @@ class Logger implements LoggerInterface
             // printf("%d...%s....%s\n", $id, $sql, $db->lastErrorMsg());
             echo $db->lastErrorMsg();
         } else {
-            echo "Records created successfully";
+            echo "Records insert successfully";
         }
     }
 }
