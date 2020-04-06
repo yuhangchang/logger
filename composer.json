@@ -8,12 +8,13 @@
             "email": "yuhang.chang@104.com.tw"
         }
     ],
+    "minimum-stability": "dev-master",
     "require": {
         "php": ">=7.0.0"
     },
     "autoload": {
         "psr-4": {
-            "Php\\Exam\\Logger": "src/logger"
+            "Php\\Exam\\Logger\\": "src/logger"
         }
     }
 }
