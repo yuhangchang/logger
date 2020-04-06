@@ -65,13 +65,15 @@ class Logger implements LoggerInterface
     {
         $db = new SQLite3('syslog.sqlite3');
         $sql =<<<EOF
-            SELECT id from logs;
+            SELECT * from logs;
             EOF;
         $id = 0;
         $ret = $db->query($sql);
         while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
             $id++;
             echo "id=".$row['id']."\n";
+            echo "level=".$row['level']."\n";
+            echo "level=".$row['message']."\n";
         }
         $sql =<<<EOF
               INSERT INTO logs (id,level,message)
